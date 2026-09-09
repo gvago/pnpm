@@ -369,9 +369,12 @@ Pacquet-specific notes:
 ## Errors and diagnostics
 
 User-facing errors go through `miette` via the `pacquet-diagnostics` crate.
-Match pnpm's error codes and messages where pnpm defines them — error codes
-are part of the public contract, not implementation detail. See
-<https://pnpm.io/errors> for the canonical list.
+Match pnpm's error codes exactly where pnpm defines them — error codes are
+part of the public contract, not implementation detail. See
+<https://pnpm.io/errors> for the canonical list. Error message wording may
+deviate from pnpm's documentation when it improves clarity, as long as the
+error code matches. Custom pacquet-specific errors must use the
+`ERR_PACQUET_` prefix, never `ERR_PNPM_`.
 
 ## Commit and PR hygiene
 
